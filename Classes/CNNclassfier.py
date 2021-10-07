@@ -20,7 +20,7 @@ from keras.layers.embeddings import Embedding
 
 class ModelGlove():
     
-  DATADIR = 'C:/Users/Madhuri/Desktop/HateSpeech/dataset/dataset.csv'
+  DATADIR = 'D:/Project/HateSpeech/dataset/dataset.csv'
   df = pd.read_csv(DATADIR)
   labels = df['label']
   
@@ -63,7 +63,7 @@ class ModelGlove():
       
       embeddings_index = dict()
       
-      with open('C:/Users/Madhuri/Desktop/HateSpeech/dataset/glove.6B.100d.txt', encoding='utf8') as f:
+      with open('D:/Project/HateSpeech/dataset/glove.6B.100d.txt', encoding='utf8') as f:
           for line in f:
               values = line.split()
               word = values[0]
@@ -97,6 +97,6 @@ class ModelGlove():
       
 serializable_obj = ModelGlove()
 obj = serializable_obj.model()
-saved_model = "C:/Users/Madhuri/Desktop/HateSpeech/dataset/Model.pkl" 
+saved_model = "D:/Project/HateSpeech/dataset/Model.pkl" 
 with open(saved_model, 'wb') as file:  
     pickle.dump(obj, file)
